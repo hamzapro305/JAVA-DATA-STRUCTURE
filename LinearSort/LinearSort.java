@@ -19,11 +19,19 @@ public class LinearSort {
     }
 
     public static void BinarySearch(int[] a, int s){
-        //Write your Code Here
-    }
-    
-    public void LinearSearch(int[] a, int s){
-        //Write your Code Here
+        int si = 0;
+        int ei = a.length - 1;
+        int mid = (si + ei)/2;
+        while(true){
+            if(si > ei) { System.out.println("This item " + s + " is not in list"); return; }
+            else if (s == a[mid]) { 
+                System.out.println("This item " + s + " is exist in list at: " + mid); 
+                return; 
+            }
+            else if(s > a[mid]) { si = mid + 1; }
+            else if(s < a[mid]) { ei = mid - 1; }
+            mid = (si + ei) / 2;
+        }
     }
 
     public static void main(String[] args){
@@ -31,9 +39,6 @@ public class LinearSort {
 
         LinearSort.sort(arr);
         LinearSort.BinarySearch(arr, 5);
-
-        LinearSort hs = new LinearSort();
-        hs.LinearSearch(arr, 6);
 
         System.out.println("Soted Array: " + Arrays.toString(arr));
     }
