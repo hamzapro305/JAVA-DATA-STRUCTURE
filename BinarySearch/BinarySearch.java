@@ -1,14 +1,11 @@
 package BinarySearch;
 
-import java.util.Arrays;
-
 public class BinarySearch {
     public int BS(int[] a, int s){
         int si = 0;
         int ei = a.length - 1;
         int mid = (si + ei)/2;
         while(true){
-            System.out.println(Arrays.toString(a) + " " + si + " " + ei + " " + " " + mid);
             if(si > ei) { return 0; }
             else if (s == a[mid]) { return 1; }
             else if(s > a[mid]) { si = mid + 1; }
